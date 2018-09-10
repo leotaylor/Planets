@@ -39,6 +39,18 @@ namespace Lists
                 { "New Horizons", new List<string> { "Jupiter", "Pluto" } }
             };
 
+            // Dictionary<string, List<string>> spacecraftDictionary = new Dictionary<string, List<string>>();
+            // spacecraftDictionary.Add("Mariner", new List<string> { "Mercury", "Venus", "Mars" });
+            // spacecraftDictionary.Add("Messenger", new List<string> { "Mercury", "Venus" });
+            // spacecraftDictionary.Add("Pioneer", new List<string> { "Venus", "Jupiter", "Saturn" });
+            // spacecraftDictionary.Add("Galileo", new List<string> { "Venus", "Jupiter" });
+            // spacecraftDictionary.Add("Magellan", new List<string> { "Venus" });
+            // spacecraftDictionary.Add("Cassini", new List<string> { "Venus", "Jupiter", "Saturn" });
+            // spacecraftDictionary.Add("Viking", new List<string> { "Mars" });
+            // spacecraftDictionary.Add("Voyager", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" });
+            // spacecraftDictionary.Add("Ulysses", new List<string> { "Jupiter" });
+            // spacecraftDictionary.Add("New Horizons", new List<string> { "Jupiter", "Pluto" });
+
             foreach(var planet in PlanetList)
             {
                 var answer = planet + ": ";
@@ -56,7 +68,7 @@ namespace Lists
                     }
                 }
 
-                answer = answer + string.Join(",", craftVists);
+                answer = answer + string.Join(", ", craftVists);
 
                 Console.WriteLine(answer);
                 Console.ReadLine();
