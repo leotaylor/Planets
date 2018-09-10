@@ -25,8 +25,42 @@ namespace Lists
             PlanetList.Remove("Pluto");
 
 
-            Console.WriteLine(PlanetList);
-            Console.ReadLine();
+            var spacecraftDictionary = new Dictionary<string, List<string>>()
+            {
+                { "Mariner", new List<string> { "Mercury", "Venus", "Mars" } },
+                { "Messenger", new List<string> { "Mercury", "Venus"} },
+                { "Pioneer" , new List<string> { "Venus", "Jupiter", "Saturn" } },
+                { "Galileo" , new List<string> { "Venus", "Jupiter" } },
+                { "Magellan" , new List<string> { "Venus" } },
+                { "Cassini", new List<string> { "Venus", "Jupiter", "Saturn" } },
+                { "Viking", new List<string> { "Mars" } },
+                { "Voyager", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" } },
+                { "Ulysses", new List<string> { "Jupiter" } },
+                { "New Horizons", new List<string> { "Jupiter", "Pluto" } }
+            };
+
+            foreach(var planet in PlanetList)
+            {
+                var answer = planet + ": ";
+
+                var craftVists = new List<string>();
+
+                foreach(var spacecraft in spacecraftDictionary)
+                {
+                    var craft = spacecraft.Key;
+                    var visitedPlanets = spacecraft.Value;
+
+                    if (visitedPlanets.Contains(planet))
+                    {
+                        craftVists.Add(craft);
+                    }
+                }
+
+                answer = answer + string.Join(",", craftVists);
+
+                Console.WriteLine(answer);
+                Console.ReadLine();
+            }
         }
     }
 }
